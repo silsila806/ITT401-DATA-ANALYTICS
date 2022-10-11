@@ -93,15 +93,15 @@ Table 2.1 Sample Dataset Inventory (Data Science and Big Data Analytics: Discove
     - **Survey and Visualize**: Seeing high-level patterns in the data enables one to understand characteristics about the data very quickly. One example is using data visualization to examine data quality, such as whether the data contains many unexpected values or other indicators of dirty data. Another example is skewness, such as if the majority of the data is heavily shifted toward one
 value or end of a continuum.
 
-##### What are the guidelines and considerations while using data visualization tool or statistical package?
+      - ##### What are the guidelines and considerations while using data visualization tool or statistical package?
 
-  - Review data to ensure that calculations remained consistent within columns or across tables for a given data field. 
-  - Does the data distribution stay consistent over all the data? If not, what kinds of actions should be taken to address this problem?
-  - Assess the granularity of the data, the range of values, and the level of aggregation of the data.
-  - Does the data represent the population of interest? 
-  - For time-related variables, are the measurements daily, weekly, monthly?  
-  - Is the data standardized/normalized? Are the scales consistent? If not, how consistent or irregular is the data?
-  - For geospatial datasets, are state or country abbreviations consistent across the data?
+        - Review data to ensure that calculations remained consistent within columns or across tables for a given data field. 
+        - Does the data distribution stay consistent over all the data? If not, what kinds of actions should be taken to address this problem?
+        - Assess the granularity of the data, the range of values, and the level of aggregation of the data.
+        - Does the data represent the population of interest? 
+        - For time-related variables, are the measurements daily, weekly, monthly?  
+        - Is the data standardized/normalized? Are the scales consistent? If not, how consistent or irregular is the data?
+        - For geospatial datasets, are state or country abbreviations consistent across the data?
 
     - **Common Tools for the Data Preparation Phase**: 
       - Hadoop can perform massively parallel ingest and custom analysis for web traffic parsing, GPS location analytics, genomic analysis, and combining of massive unstructured data feeds from multiple sources.
