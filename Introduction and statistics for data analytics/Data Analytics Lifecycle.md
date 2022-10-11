@@ -66,7 +66,47 @@ The team should perform five main activities during this step of the discovery p
     - Evaluate the data structures and tools needed
     - Scope the sort of data infrastructure needed for this type of problem
    
-> Unlike many traditional stage-gate processes, in which the team can advance only when specific criteria are met, the Data Analytics Lifecycle is intended to accommodate more
-ambiguity. This more closely reflects how data science projects work in real-life situations. For each phase of the process, it is recommended to pass certain checkpoints as
-a way of gauging whether the team is ready to move to the next phase of the Data Analytics Lifecycle. The team can move to the next phase when it has enough information to draft an analytics
-plan and share it for peer review.
+> Unlike many traditional stage-gate processes, in which the team can advance only when specific criteria are met, the Data Analytics Lifecycle is intended to accommodate more ambiguity. This more closely reflects how data science projects work in real-life situations. For each phase of the process, it is recommended to pass certain checkpoints as a way of gauging whether the team is ready to move to the next phase of the Data Analytics Lifecycle. The team can move to the next phase when it has enough information to draft an analytics plan and share it for peer review.
+
+* **Phase 2: Data Preparation**: The second phase of the Data Analytics Lifecycle involves data preparation, which
+includes the steps to explore, preprocess, and condition data prior to modeling and analysis. In this phase, the team needs to create a robust environment in which it can explore the data that is separate from a production environment. Usually, this is done by
+preparing an analytics sandbox. To get the data into the sandbox, the team needs to perform ETLT, by a combination of extracting, transforming, and loading data into the sandbox. The data preparation phase is generally the most iterative and the one that teams tend to underestimate most often.
+  - **Preparing the Analytic Sandbox**: The first subphase of data preparation requires the team to obtain an analytic sandbox
+(also commonly referred to as a workspace), in which the team can explore the data without interfering with live production databases. When developing the analytic sandbox, it is a best practice to collect all kinds of data there, as team members need access to high volumes and varieties of data for a Big Data analytics project. This can include everything from summary-level aggregated data,
+structured data, raw data feeds, and unstructured text data from call logs or web logs, depending on the kind of analysis the team plans to undertake. The analytic sandbox enables organizations to undertake more ambitious data science projects and move beyond doing traditional data analysis and Business Intelligence to perform more robust and advanced predictive analytics.
+   - **Performing ETLT**: In ETL, users perform extract, transform, load processes to extract data from a datastore, perform data transformations, and load the data back into the datastore. However, the analytic sandbox approach differs slightly; it
+advocates extract, load, and then transform. In this case, the data is extracted in its raw form and loaded into the datastore, where analysts can choose to transform the data into a new state or leave it in its original, raw condition. The reason for this approach is that there is significant value in preserving the raw data and including it in the sandbox before any transformations take place. This process can be summarized as ETLT to reflect the fact that a team may choose to perform ETL in one case and ELT in another. Application programming interface (API) is an increasingly popular way to access a data source. E.g. Twitter API.
+    - **Learning About the Data**: Spending time to learn the nuances of the datasets provides context to understand what
+constitutes a reasonable value and expected output versus what is a surprising finding. Activities in this step are:
+      - Clarifies the data that the data science team has access to at the start of the project
+      - Highlights gaps by identifying datasets within an organization that the team may find useful but may not be accessible to the team today
+      - Identifies datasets outside the organization that may be useful to obtain, through open APIs, data sharing, or purchasing data to supplement already existing datasets.
+Table 2.1 Sample Dataset Inventory (Data Science and Big Data Analytics: Discovering, Analyzing, Visualizing and Presenting Data. Wiley Publishing(1st. ed.). 2015.)
+
+   - **Data Conditioning**: Data conditioning refers to the process of cleaning data, normalizing datasets, and performing transformations on the data. Data conditioning is often viewed as a preprocessing step for the data analysis because it involves many operations on the dataset before developing models to process or analyze the data. Additional questions and considerations for the data conditioning step include.
+      - What are the data sources? What are the target fields (for example, columns of the tables)?
+      - How clean is the data?
+      - How consistent are the contents and files? 
+      - Assess the consistency of the data types. 
+      - Review the content of data columns or other inputs, and check to ensure they make sense. 
+      - Look for any evidence of systematic error. 
+    - **Survey and Visualize**: Seeing high-level patterns in the data enables one to understand characteristics about the data very quickly. One example is using data visualization to examine data quality, such as whether the data contains many unexpected values or other indicators of dirty data. Another example is skewness, such as if the majority of the data is heavily shifted toward one
+value or end of a continuum.
+
+##### What are the guidelines and considerations while using data visualization tool or statistical package?
+
+  - Review data to ensure that calculations remained consistent within columns or across tables for a given data field. 
+  - Does the data distribution stay consistent over all the data? If not, what kinds of actions should be taken to address this problem?
+  - Assess the granularity of the data, the range of values, and the level of aggregation of the data.
+  - Does the data represent the population of interest? 
+  - For time-related variables, are the measurements daily, weekly, monthly?  
+  - Is the data standardized/normalized? Are the scales consistent? If not, how consistent or irregular is the data?
+  - For geospatial datasets, are state or country abbreviations consistent across the data?
+
+    - **Common Tools for the Data Preparation Phase**: 
+      - Hadoop can perform massively parallel ingest and custom analysis for web traffic parsing, GPS location analytics, genomic analysis, and combining of massive unstructured data feeds from multiple sources.
+      - Alpine Miner rovides a graphical user interface (GUI) for creating analytic workflows, including data manipulations and a series of analytic events such as staged data-mining techniques
+      - OpenRefine is “a free, open source, powerful tool for working with messy data.”
+      - Data Wrangler is an interactive tool for data cleaning and transformation developed at Stanford University and can be used   to perform many transformations on a given dataset.
+
+> For Phase 2, the team needs assistance from IT, DBAs, or whoever controls the Enterprise Data Warehouse (EDW) for data sources the data science team would like to use.
