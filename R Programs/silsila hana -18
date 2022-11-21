@@ -1,0 +1,264 @@
+> # Addition
+  > 1 + 1
+[1] 2
+> # Multiplication
+  > 10 * 10
+[1] 100
+> # Compute Logarithm
+  > log10(100)
+[1] 2
+> # Print Text
+  > "Hello World"
+[1] "Hello World"
+> # Data Structures in R: Vectors
+  > 1:10
+[1]  1  2  3  4  5  6  7  8  9 10
+> seq(1,5, by = 0.5)
+[1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0
+> seq(1,10, length=3)
+[1]  1.0  5.5 10.0
+> k<-c (10,20,30,40,50,60,70,80,90)
+> k
+[1] 10 20 30 40 50 60 70 80 90
+> k[1]
+[1] 10
+> k[2]
+[1] 20
+> k[3]
+[1] 30
+> k[-1]
+[1] 20 30 40 50 60 70 80 90
+> k[-2]
+[1] 10 30 40 50 60 70 80 90
+> rep(8,100)
+[1] 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+[27] 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+[53] 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+[79] 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+> s="I am a string"
+> s
+[1] "I am a string"
+> a=c(2,4,6)
+> b=c(1,2,3,4)
+> combine=c(a,b)
+> a=c(1,2,3)
+> a+1
+[1] 2 3 4
+> b=c(4,2,7,1,5,9,2,3,4,6)
+> sort(b)
+[1] 1 2 2 3 4 4 5 6 7 9
+> sort(b, decreasing = TRUE)
+[1] 9 7 6 5 4 4 3 2 2 1
+> vect1=c(1,2,3,4,5)
+> vect1[c(TRUE,TRUE,FALSE,FALSE,TRUE)]
+[1] 1 2 5
+> actor=c("lal","mammotty","sureshgopi")
+> actor[3]="nivin pauli"
+> actor=c("lal","mammotty","sureshgopi")
+> names(actor)=c("first","second", "third")
+> actor["first"]
+first 
+"lal" 
+> actor[c("second","first","third")]
+second        first        third 
+"mammotty"        "lal" "sureshgopi" 
+> #Data Structures in R: Matrices
+  > x = matrix(c(10,20,30,40,50,60,70,80,90,100), nrow=5, ncol=2)
+> x
+[,1] [,2]
+[1,]   10   60
+[2,]   20   70
+[3,]   30   80
+[4,]   40   90
+[5,]   50  100
+> nrow(x)
+[1] 5
+> ncol(x)
+[1] 2
+> x[4,1]
+[1] 40
+> #Data Structures in R: Arrays, Factors
+  > i <- array(c(1:24), dim=c(3,4,2))
+> P<-factor(c(1,3,2,1,1,3,4,2,3,2,1,3,4))
+> P
+[1] 1 3 2 1 1 3 4 2 3 2 1 3 4
+Levels: 1 2 3 4
+> Q<-factor(c("aaa", "bbb", "ccc", "aaa", "bbb", "aaa", "ccc"))
+> Q
+[1] aaa bbb ccc aaa bbb aaa ccc
+Levels: aaa bbb ccc
+> #Data Structures in R: Lists
+  > listdata<-
+  +     list(P=c(1,3,2,1,1,3,4,2,3,2,1,4,3,4),Q=c("aaa","bbb","eee","aaa","bbb","aaa","ee
++ e","eee"))
+> listdata
+$P
+[1] 1 3 2 1 1 3 4 2 3 2 1 4 3 4
+
+$Q
+[1] "aaa"   "bbb"   "eee"   "aaa"   "bbb"   "aaa"   "ee\ne" "eee"  
+
+> #Data frame
+  > SlNo<-c(1,2,3,4)
+> Name<-c("Raju", "Radha", "Mayavi", "Luttapi")
+> Age<-c(18,17,20,1)
+> table<-data.frame(SlNo,Name,Age)
+> table
+SlNo    Name Age
+1    1    Raju  18
+2    2   Radha  17
+3    3  Mayavi  20
+4    4 Luttapi  18
+> table$Name
+[1] "Raju"    "Radha"   "Mayavi"  "Luttapi"
+> table[1]
+SlNo
+1    1
+2    2
+3    3
+4    4
+> # Basic mathematical operations
+  > c(1,2,3,4) +c(2,3,4,5)
+[1] 3 5 7 9
+> c(20,30,40)+c(2,3,4)
+[1] 22 33 44
+> c(20,30,40)-c(2,3,4)
+[1] 18 27 36
+> c(20,30,40)*c(2,3,4)
+[1]  40  90 160
+> c(20,30,40)/c(2,3,4)
+[1] 10 10 10
+> # Objects
+  > objects()
+[1] "Age"          "distance"     "i"            "listdata"     "mtcars"      
+[6] "Name"         "P"            "Q"            "scatter_data" "SlNo"        
+[11] "table"        "time"         "x"           
+> rm(x)
+> objects()
+[1] "Age"          "distance"     "i"            "listdata"     "mtcars"      
+[6] "Name"         "P"            "Q"            "scatter_data" "SlNo"        
+[11] "table"        "time"        
+> class
+Error: object 'y' not found
+> # User Defined Functions
+  > mean1temp<-function(x,y,z)
+    + {
+      +     result=(x+y+z)/3;
+      + }
+> output=mean1temp(3,4,5)
+> output
+[1] 4
+> # Basic stats in R
+  > dataset<-c(21,22,23,24,25,26,27,28,29,30)
+> M<-mean(dataset)
+> M
+[1] 25.5
+> median(dataset)
+[1] 25.5
+> range(dataset)
+[1] 21 30
+> max(dataset)
+[1] 30
+> min(dataset)
+[1] 21
+> quantile(dataset)
+0%   25%   50%   75%  100% 
+21.00 23.25 25.50 27.75 30.00 
+> x <- rnorm(100, mean=5, sd=2)
+> rand <- sample(x)
+> trunc(x)
+[1]  3 11  3  2  1  6  6  3  2  4  5  4  0  8  6  3  0  5  6  2  7  2  5  4  6  5  9  3  5
+[30]  5  4  3  3  6  5  4  4  5  6  5 11  4  5  5  6  3  2  4  3  4  8  3  6  6  3  1  4  3
+[59]  1  4  4  6  7  5  5  4  3  7  5  5  4  5  5  5  4  8  3  5  3  4  3  1  4  5  3  4  6
+[88]  5  7  1  1  6  5  3  6  9  4  5  9  2
+> set.seed(10)
+> rnorm(10)
+[1]  0.01874617 -0.18425254 -1.37133055 -0.59916772  0.29454513  0.38979430 -1.20807618
+[8] -0.36367602 -1.62667268 -0.25647839
+> var(dataset)
+[1] 9.166667
+> sd(dataset)
+[1] 3.02765
+> dataset1<-c(21,22,23,24,25,26,27,28,29,30)
+> dataset2<-c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.1)
+> cor(dataset,dataset2)
+[1] 0.9964518
+> cov(dataset1,dataset2)
+[1] 0.9666667
+> summary(dataset)
+Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+21.00   23.25   25.50   25.50   27.75   30.00 
+> # R Graphics
+  > x<-1:10
+> plot(x)
+> x <- c(1.6907, 1.7242, 1.7552, 1.7842, 1.8113, 1.8369, 1.8610, 1.8839)
+> y <- c( 6, 13, 18, 28, 52, 53, 61, 60)
+> plot(x,y)
+> plot(x,y,type='l')
+> plot(x,y,type='b')
+> plot(x,y,type='o')
+> x <- c(1.6907, 1.7242, 1.7552, 1.7842, 1.8113, 1.8369, 1.8610, 1.8839)
+> y <- c( 6, 13, 18, 28, 52, 53, 61, 60)
+> z <- c( 12, 22, 34, 33, 41, 48, 49, 5)
+> plot(x, y, ylim=range(c(y,z)), type='l',col='red')
+> par(new = TRUE)
+> plot(x,z,ylim=range(c(y,z)),axes = FALSE, xlab = "",ylab = "",type='l',col='blue')
+> # Pie
+  > pie(y, col=rainbow(8))
+> # Box Plot in R
+  > x=c(3,4,5,3,6,7,5,4,6,7,7,8,6,8,5,7)
+> y=c(20,23,24,26,31,23,27,28,41,42,37,2)
+> z=c(45,46,39,48,49,50,51,51,48,49,47,46)
+> boxplot(x,y,z,
+          +         names=c("Data 1","Data 2","Data 3"),
+          +         col=c("red","yellow","blue"))
+> # Temperature of two cities
+  > temp1<- c(28,27,30,34,36,37,40)
+> temp2<- c(25,26,28,30,30,31,32)
+> # to create y axis optimal
+  > y_range <- range(0, temp1, temp2)
+> plot(temp1, type="o", col="blue", ylim=y_range, axes=FALSE, ann=FALSE)
+> # to set X axis
+  > axis(1, at=1:7, lab=c("Mon","Tue","Wed","Thu","Fri","Sat", "Sun" ))
+> # to set y axis
+  > axis(2, las=1, at=4*0:y_range[2])
+> lines(temp2, type="o", pch=22, lty=2, col="red")
+> # Create a title with a red,
+  > title(main="Temperature in Two cities", col.main="blue", font.main=6)
+> # Label the x and y axes with dark green text
+  > title(xlab="Day", col.lab=rgb(0,0.5,0))
+> title(ylab="Temperature in degree", col.lab=rgb(0,0.5,0))
+> # Create a legend
+  > legend(1, y_range[2], c("Temp-City1","Temp-City1"), cex=0.8,
+           +        col=c("blue","red"), pch=21:22, lty=1:2);
+> # Regression analysis
+  > age = c(19,22,25,30,35,41,46,48,50,53,57,60,64,70)
+> chol_level =
+  +     c(4.1,4.3,4.3,4.4,4.5,4.6,4.7,4.6,5,5,5.1,5.3,5.5,5.6)
+> plot(age ~ chol_level, main="Age Vs Cholesterol Level")
+> # Regression analysis: Result
+  > lm.out=lm(chol_level ~ age)
+> lm.out
+
+Call:
+  lm(formula = chol_level ~ age)
+
+Coefficients:
+  (Intercept)          age  
+3.53714      0.02819  
+
+> for (i in 1:14){ print(paste(i<-(0.02819*age[i])+3.53714))}
+[1] "4.07275"
+[1] "4.15732"
+[1] "4.24189"
+[1] "4.38284"
+[1] "4.52379"
+[1] "4.69293"
+[1] "4.83388"
+[1] "4.89026"
+[1] "4.94664"
+[1] "5.03121"
+[1] "5.14397"
+[1] "5.22854"
+[1] "5.3413"
+[1] "5.51044"
